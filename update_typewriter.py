@@ -21,6 +21,9 @@ load_dotenv()
 TOKEN = os.getenv("NOTION_TOKEN")
 DATABASE_ID = os.getenv("DATABASE_ID")
 
+if TOKEN is None or DATABASE_ID is None:
+    raise ValueError("Environment variables belum diatur.")
+
 notion = Client(auth=TOKEN)
 
 today = datetime.now().strftime("%A")
