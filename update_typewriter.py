@@ -3,6 +3,9 @@ from dotenv import load_dotenv
 import os
 from datetime import datetime
 import re
+from zoneinfo import ZoneInfo
+
+today = datetime.now(ZoneInfo("Asia/Jakarta")).strftime("%A")
 
 def format_time(time_str):
     if not time_str:
