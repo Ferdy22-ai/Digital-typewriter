@@ -29,7 +29,7 @@ if TOKEN is None or DATABASE_ID is None:
 
 notion = Client(auth=TOKEN)
 
-today = datetime.now().strftime("%A")
+today = datetime.now(ZoneInfo("Asia/Jakarta")).strftime("%A")
 
 TYPE_MAP = {
     "Activity": ("work", "event-work", "todo-work"),
